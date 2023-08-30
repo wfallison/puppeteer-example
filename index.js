@@ -2,6 +2,8 @@
 
 const puppeteer = require('puppeteer');
 const pvaCustomOpts = require('./custom/options');
+const fs = require('fs');
+const pdf = require('pdf-parse');
 const url = process.argv[2];
 
 (async () => {
@@ -27,13 +29,10 @@ const url = process.argv[2];
 })();
 
 const makeTableOfContents = async (fileName) => {
-  const fs = require('fs');
-  const pdf = require('pdf-parse');
-  const { Readable } = require("stream");
+
   let dataBuffer = fs.readFileSync(fileName);
   pdf(dataBuffer).then(function(data) {
       let toc ={}, page;
-      //const pagePattern = /Page [0-9]+\/[0-9]+/;
       const pagePattern = /Page [0-9][0-9]/;
       const topicPattern = /Title: [A-Za-z 0-9]+/;
       const lines = data.text.split('\n');
