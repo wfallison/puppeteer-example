@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^21.1.1"
+    "pdf-parse": "^1.1.1",
+    "puppeteer": "^21.1.1",
+    "stream": "^0.0.2"
   }
 }
