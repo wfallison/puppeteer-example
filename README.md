@@ -6,3 +6,5 @@ puppeteer-example
 - Install Dependencies
 - Run `node index.js <your-URI>` to produce pdf file
 - Check `reports-out` for your file
+
+- test
