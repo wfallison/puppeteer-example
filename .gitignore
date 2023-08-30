@@ -1,3 +1,3 @@
-reports-out
+reports-out/*.pdf
 node_modules
 package-lock.json
