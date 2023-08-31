@@ -19,10 +19,12 @@ const url = process.argv[2];
   await page.pdf({
     path: fileName,
     displayHeaderFooter: true,
-    footerTemplate: '<div style="font-size:12px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
-    headerTemplate: '<div></div>',
-    format : 'A4',
-    margin: {top: '100px', bottom:'100px'}
+    footerTemplate:
+      '<div style="font-size:12px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
+    headerTemplate: "<div></div>",
+    format: "A4",
+    margin: { top: "100px", bottom: "100px" },
+    printBackground: true,
   });
   await browser.close();
   await makeTableOfContents(fileName);
