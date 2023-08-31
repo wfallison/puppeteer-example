@@ -1,0 +1,271 @@
+
+/* Cover Page with Main Image and elements */
+
+.border-element {
+  border: 1px solid black;
+}
+
+.cover-page{
+  padding: 0;
+  margin: 0;
+  background-color: #ed7d31;
+  background-color: #ed7d31;
+  height: 100px;
+  width: 100%;
+  margin-top: 0px;
+}
+
+.title-belt {
+  background-color:#10212f;
+  opacity: 0.9;
+  position: absolute;
+  height: 120px;
+  width: 100%;
+  margin-top: -120px !important;
+}
+
+.title-belt > h1{
+  color: #ffffff;
+  font-size: 2.3em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0px;
+  padding: 5px;
+  letter-spacing: 0.7px;
+}
+.title-belt > h1:nth-child(2){
+  margin-top: -5px;
+}
+.cover-page > h5  {
+  font-size: 1.2em;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 0;
+  padding-right: 40px;
+  padding-bottom: 0; 
+  padding-left: 40px; 
+}
+
+.cover-page > h5:nth-child(1)  {
+  padding-top: 25px;
+}
+
+/* MARGIN for the MAIN-CONTAINER */
+.override-padding{
+  padding: 50px !important;
+}
+
+.override-padding-horizontal{
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+/* CONTENTS---------------------- */
+.margin-top-50{
+  margin-top: 100px;
+}
+.margin-top-100{
+  margin-top: 50px;
+}
+
+.margin-top-20{
+  margin-top: 20px;
+}
+
+.pva-page-logo{
+  display: inline;
+  position: absolute;
+  right: -10px;
+  margin-top: -60px;
+}
+.pva-page-logo > img{
+  width: 100px;
+  margin-left: -20px;
+  margin-bottom: -15px;
+}
+
+.contents-area{
+  padding: 50px 0 50px 0;
+}
+.header-title-override{
+  border-bottom: #ed7d31 solid 4px !important;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contents-table{
+  font-size: 1em;
+  font-weight: 500;
+  border-top: #10212f solid 1px;
+  width: 100%;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+.contents-table-th{
+  font-weight: 500 !important ;
+  padding-bottom: 10px !important;
+}
+.page-numbers{
+  padding-left: 200px;
+}
+.inner-row-indent{
+  padding-left: 50px !important;
+  padding-bottom: 10px !important;
+}
+
+/* DOCUMENT CONTROL ------------------------- */
+.subtitle-header{
+  color: #ed7d31;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.client-confidentiality-title{
+  margin-left: -12px;
+}
+.client-confidentiality-body{
+  margin-left: -12px;
+  padding-top: 10px;
+}
+.client-confidentiality-body2{
+  margin-left: -12px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.document-version-control-title{
+  padding-top: 50px !important;
+  display: block;
+  border-bottom: #ed7d31 solid 4px !important;
+  width: 95%;
+}
+.document-distribution-list-title{
+  padding-top: 30px !important;
+  display: block;
+  border-bottom: #ed7d31 solid 4px !important;
+  width: 95%;
+}
+
+/* EXECUTIVE & Assessment SUMMARIES ------------------------- */
+.assessment-summary-body > span:nth-child(-n+3){
+  font-weight: 600;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.assessment-summary-body > span:nth-child(4){
+  font-weight: 600;
+  color: red;
+}
+.assessment-summary-body-graph{
+  margin-top: 10px;
+}
+.riskRating-image{
+  margin-left: 100px;
+  padding: 20px 0;
+}
+.strategic-recommendations-body{
+  padding-top: 10px;
+}
+
+/* TECHNICAL SUMMARY------------------------ */
+.technical-summary-subtitle-body{
+  padding: 10px 0 !important;
+}
+.scope > ul{
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.technical-summary > div > div > table{
+  margin-top: 20px !important;
+}
+.table-width:nth-child(1) {
+  width: 50px;
+}
+.table-width:nth-child(2) {
+  width: 100px;
+}
+.table-width:nth-child(3) {
+  width: 100px;
+}
+.table-width:nth-child(4) {
+  width:auto;
+}
+
+.table-width-minimum {
+  width: 100px;
+}
+
+.cell-high{
+  background-color: #ff0000;
+  color: white;
+}
+.cell-medium{
+  background-color: #f98c2d;
+  color: white;
+}
+.cell-low{
+  background-color: #ecb712;
+  color: white;
+}
+.cell-info{
+  background-color: #808080;
+  color: white;
+}
+
+.text-high{
+  color: #ff0000;
+}
+.text-medium{
+  color: #f98c2d;
+}
+.text-low{
+  color: #ecb712;
+}
+.text-info{
+  color: #808080;
+}
+
+/* TECHNICAL DETAILS------------------------ */
+.degree-level-ref-labels{
+  position: absolute;
+  right: 30px;
+  margin-top: -30px;
+}
+.degree-level-ref-labels > div{
+  padding: 5px 0;
+}
+.technical-details-subtitle-body{
+  padding: 35px 0 10px 0 !important;
+}
+.vulnerability-details-table{
+  margin-top: 10px;
+}
+.vulnerability{
+  padding-top: 10px;
+}
+.vulnerability > .short-width{
+  padding-top: 10px;
+  width: 100px;
+}
+.vulnerability-body{
+  margin: 10px 0 20px 0 !important;
+}
+.remediation-guidance{
+  margin-bottom: 20px;
+}
+.remediation-guidance-body{
+  padding-top: 2px;
+  padding-bottom: 40px;
+}
+
+/* Footer with Co Address */
+.footer{
+  margin: auto;
+  width: 50%;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+.footer > span > span{
+  padding-left: 35px;
+}

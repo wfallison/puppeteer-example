@@ -7,25 +7,38 @@ const pdf = require('pdf-parse');
 const url = process.argv[2];
 
 (async () => {
-  console.log(pvaCustomOpts)
+  console.log(pvaCustomOpts);
   if (!url) {
-    throw new Error('Absolute URI, including scheme, is required as command line argument')
+    throw new Error(
+      "Absolute URI, including scheme, is required as command line argument"
+    );
   }
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({});
   const page = await browser.newPage();
   const now = new Date();
-  const fileName = `reports-out/${now.getTime()}-report-out.pdf`
+  const fileName = `reports-out/${now.getTime()}-report-out.pdf`;
+  await page.coverage.startCSSCoverage();
   await page.goto(url);
+  await page.addStyleTag({ path: "all.css" });
+  await page.addStyleTag({ path: "override.css" });
+  // await page.addStyleTag({
+  //   content: `
+  //       body { margin-top: 1cm; }
+  //       @page:first { margin-top: 0; }
+  //   `,
+  // });
   await page.pdf({
     path: fileName,
     displayHeaderFooter: true,
     footerTemplate:
-      '<div style="font-size:12px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
+      '<div style="font-size:8px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
     headerTemplate: "<div></div>",
     format: "A4",
-    margin: { top: "100px", bottom: "100px" },
+    margin: { top: "50px", bottom: "50px" },
     printBackground: true,
+    timeout: 0,
   });
+  await page.coverage.stopCSSCoverage();
   await browser.close();
   await makeTableOfContents(fileName);
 })();
