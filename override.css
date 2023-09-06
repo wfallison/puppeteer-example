@@ -1,6 +1,17 @@
 
 /* Cover Page with Main Image and elements */
 
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+
 .border-element {
   border: 1px solid black;
 }
@@ -9,9 +20,6 @@
   padding: 0;
   margin: 0;
   background-color: #ed7d31;
-  background-color: #ed7d31;
-  height: 100px;
-  width: 100%;
   margin-top: 0px;
 }
 
@@ -60,6 +68,11 @@
   padding-right: 50px !important;
 }
 
+.spread {
+  display: flex; 
+  justify-content: space-between;
+}
+
 /* CONTENTS---------------------- */
 .margin-top-50{
   margin-top: 100px;
@@ -70,6 +83,10 @@
 
 .margin-top-20{
   margin-top: 20px;
+}
+
+.margin-bottom-20{
+  margin-bottom: 20px;
 }
 
 .pva-page-logo{
