@@ -5,12 +5,22 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #ffffff; /* White background */
+}
+
+.content {
+  background-color: #ffffff; /* White background */
 }
 
 .expand {
   flex-grow: 1;
+  background-color: #ffffff;
 }
 
+.expand {
+  flex-grow: 1;
+  background-color: #ffffff;
+}
 
 .border-element {
   border: 1px solid black;
@@ -211,6 +221,18 @@
 
 .table-width-minimum {
   width: 100px;
+}
+
+.cell-High {
+  background-color: #ffcccc;
+}
+
+.cell-Medium {
+  background-color: #ffddc1;
+}
+
+.cell-Weak {
+  background-color: #ffe6b0;
 }
 
 .cell-high{

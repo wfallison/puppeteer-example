@@ -5,6 +5,7 @@ const pvaCustomOpts = require('./custom/options');
 const fs = require('fs');
 const pdf = require('pdf-parse');
 const url = process.argv[2];
+const { PDFDocument } = require('pdf-lib');
 
 (async () => {
   console.log(pvaCustomOpts);
@@ -44,6 +45,20 @@ const url = process.argv[2];
   });
   await page.coverage.stopCSSCoverage();
   await browser.close();
+
+  // Load the generated PDF using pdf-lib
+  const pdfDoc = await PDFDocument.load(fs.readFileSync(fileName));
+
+  // Remove the final page (assuming you want to remove the last page)
+  const pageCount = pdfDoc.getPageCount();
+  if (pageCount > 0) {
+    pdfDoc.removePage(pageCount - 1);
+  }
+
+  // Save the modified PDF
+  const modifiedPdfBytes = await pdfDoc.save();
+  fs.writeFileSync(fileName, modifiedPdfBytes);
+
   await makeTableOfContents(fileName);
 })();
 
