@@ -21,12 +21,16 @@ const url = process.argv[2];
   await page.goto(url);
   await page.addStyleTag({ path: "all.css" });
   await page.addStyleTag({ path: "override.css" });
-  // await page.addStyleTag({
-  //   content: `
-  //       body { margin-top: 1cm; }
-  //       @page:first { margin-top: 0; }
-  //   `,
-  // });
+  await page.pdf({
+    path: fileName,
+    displayHeaderFooter: false,
+    headerTemplate: "<div></div>",
+    format: "A4",
+    printBackground: true,
+    timeout: 0,
+    path: "page1.pdf",
+    pageRanges: "1",
+  });
   await page.pdf({
     path: fileName,
     displayHeaderFooter: true,
@@ -34,7 +38,7 @@ const url = process.argv[2];
       '<div style="font-size:8px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
     headerTemplate: "<div></div>",
     format: "A4",
-    margin: { top: "50px", bottom: "50px" },
+    margin: { top: "100px", bottom: "100px" },
     printBackground: true,
     timeout: 0,
   });
