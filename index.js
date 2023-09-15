@@ -6,6 +6,9 @@ const fs = require('fs');
 const pdf = require('pdf-parse');
 const url = process.argv[2];
 const { PDFDocument } = require('pdf-lib');
+const PDFMerger = require("pdf-merger-js");
+
+var merger = new PDFMerger();
 
 (async () => {
   console.log(pvaCustomOpts);
@@ -22,6 +25,7 @@ const { PDFDocument } = require('pdf-lib');
   await page.goto(url);
   await page.addStyleTag({ path: "all.css" });
   await page.addStyleTag({ path: "override.css" });
+
   await page.pdf({
     path: fileName,
     displayHeaderFooter: false,
@@ -31,15 +35,16 @@ const { PDFDocument } = require('pdf-lib');
     timeout: 0,
     path: "page1.pdf",
     pageRanges: "1",
+    margin: { top: "0", right: "0", bottom: "0", left: "0" },
   });
   await page.pdf({
     path: fileName,
     displayHeaderFooter: true,
     footerTemplate:
-      '<div style="font-size:8px; margin-left:12px;">Page <span class="pageNumber"</span></div>',
+      '<div style="font-size:8px; margin-left:12px;">Page <span class="pageNumber"</span></div> <div style="font-size:8px; margin-left: 41.5%"><a href="https://pva.ai" target="_blank">pva.ai</a></div>',
     headerTemplate: "<div></div>",
     format: "A4",
-    margin: { top: "100px", bottom: "100px" },
+    margin: { top: "50px", bottom: "50px" },
     printBackground: true,
     timeout: 0,
   });
@@ -58,6 +63,15 @@ const { PDFDocument } = require('pdf-lib');
   // Save the modified PDF
   const modifiedPdfBytes = await pdfDoc.save();
   fs.writeFileSync(fileName, modifiedPdfBytes);
+
+  try {
+    await merger.add("page1.pdf");
+    await merger.add(fileName, `2-${pageCount - 2}`);
+    await merger.save("merger.pdf");
+  } catch (error) {
+    console.log(error);
+    console.log("Error occured while combining PDF");
+  }
 
   await makeTableOfContents(fileName);
 })();

@@ -28249,8 +28249,6 @@ pre.prettyprint {
 
 .header {
     line-height: 28px;
-    margin-bottom: 16px;
-    margin-top: 18px;
     padding-bottom: 4px;
     border-bottom: 1px solid #CCC;
 }
@@ -53876,7 +53874,7 @@ h3.latest-scans-header {
 
 .page-header {
     border-bottom: none;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 
 /* Getting started page */
@@ -53889,7 +53887,7 @@ h3.latest-scans-header {
 }
 
 .page-area {
-    padding-top: 13px;
+    padding-top: 0px;
 }
 
 .getting-started-page-content .page-area {
@@ -54382,7 +54380,7 @@ body.tool code {
 /* Unauthenticted report */
 @media (max-width: 1249px) {
     .inside-iframe .main-container {
-        margin-top: 30px;
+        margin-top: 0px;
     }
 }
 

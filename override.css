@@ -59,19 +59,22 @@
   color: #ffffff;
   font-weight: 600;
   margin-top: 0;
-  padding-right: 40px;
   padding-bottom: 0; 
-  padding-left: 40px; 
+  text-align: center;
+    padding: 5px;
+    letter-spacing: 0.7px;
 }
 
 .cover-page > h5:nth-child(1)  {
-  padding-top: 25px;
+  padding-top: 150px;
 }
 
-/* MARGIN for the MAIN-CONTAINER */
+/* MARGIN for the MAIN-CONTAINER
 .override-padding{
   padding: 50px !important;
 }
+
+*/
 
 .override-padding-horizontal{
   padding-left: 50px !important;
@@ -111,22 +114,15 @@
   margin-bottom: -15px;
 }
 
-.contents-area{
-  padding: 50px 0 50px 0;
-}
 .header-title-override{
   border-bottom: #ed7d31 solid 4px !important;
   width: 100%;
-  margin-bottom: 15px;
 }
 
 .contents-table{
   font-size: 1em;
   font-weight: 500;
-  border-top: #10212f solid 1px;
   width: 100%;
-  padding-top: 20px;
-  margin-top: 30px;
 }
 .contents-table-th{
   font-weight: 500 !important ;
@@ -158,8 +154,7 @@
   padding-top: 10px;
   padding-bottom: 50px;
 }
-.document-version-control-title{
-  padding-top: 50px !important;
+.document-version-control-title {
   display: block;
   border-bottom: #ed7d31 solid 4px !important;
   width: 95%;
@@ -199,8 +194,7 @@
 .technical-summary-subtitle-body{
   padding: 10px 0 !important;
 }
-.scope > ul{
-  padding-top: 10px;
+.scope>ul {
   padding-left: 20px;
 }
 .technical-summary > div > div > table{
